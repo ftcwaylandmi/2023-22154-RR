@@ -1,5 +1,6 @@
 package org.firstinspires.ftc.teamcode.armsubsystem;
 
+import com.qualcomm.robotcore.hardware.DcMotor;
 import com.qualcomm.robotcore.hardware.DcMotorEx;
 import com.qualcomm.robotcore.hardware.HardwareMap;
 import com.qualcomm.robotcore.hardware.Servo;
@@ -45,7 +46,7 @@ public class ArmSubsystem {
         extendMotor.setMode(DcMotorEx.RunMode.RUN_TO_POSITION);
     }
 
-    private void wait(int sleeptime) {
+    public void wait(int sleeptime) {
         ElapsedTime timer = new ElapsedTime();
         timer.reset();
         while (timer.milliseconds() < sleeptime) {
@@ -79,6 +80,12 @@ public class ArmSubsystem {
     public void ArmUpForClimb() {
         extendMotor.setTargetPosition(ArmConstants.ARM_POSITIONS.EXTEND.PICKUP_POSITION);
         pivotMotor.setTargetPosition(ArmConstants.ARM_POSITIONS.PIVOT.CLIMB_UP_POSITION);
+    }
+
+    public void ScoreExtraPosition() {
+        pivotMotor.setTargetPosition(ArmConstants.ARM_POSITIONS.PIVOT.SCORE_EXTRA_POSITION);
+        wait(waitTime);
+        extendMotor.setTargetPosition(ArmConstants.ARM_POSITIONS.EXTEND.SCORE_POSITION);
     }
 
     public void Climb() {

@@ -15,13 +15,9 @@ public class TeleOpMain extends OpMode {
 
     @Override
     public void init() {
-        addData("Startup", "TeleOpMain Init");
         mecanumDrive = new SampleMecanumDrive(hardwareMap);
         armSubsystem = new ArmSubsystem(hardwareMap);
-        addData("Startup", "Subsystem finished building");
         armSubsystem.ApplyPower(1);
-        addData("ArmSubsystem", "Applied Arm Power");
-        addData("Startup", "Startup Complete!");
     }
 
     @Override
@@ -44,7 +40,7 @@ public class TeleOpMain extends OpMode {
         }
 
         if (gamepad2.x) {
-            armSubsystem.LaunchPlane();
+            armSubsystem.ScoreExtraPosition();
         }
 
         if (gamepad2.right_bumper) {
@@ -59,15 +55,10 @@ public class TeleOpMain extends OpMode {
             armSubsystem.Climb();
         }
 
+        if (gamepad1.a) {
+            armSubsystem.LaunchPlane();
+        }
+
     }
 
-    private void addData(String caption, String string) {
-        telemetry.addData(caption, string);
-        telemetry.update();
-    }
-
-    private void addData(String caption, Object object) {
-        telemetry.addData(caption, object);
-        telemetry.update();
-    }
 }

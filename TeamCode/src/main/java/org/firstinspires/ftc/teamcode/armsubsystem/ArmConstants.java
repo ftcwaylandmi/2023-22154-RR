@@ -6,7 +6,8 @@ public final class ArmConstants {
         public static class PIVOT {
             public static int HOME_POSITION = 0;
             public static int SCORE_POSITION = -820;
-            public static int PICKUP_POSITION = -110;
+            public static int SCORE_EXTRA_POSITION = -900;
+            public static int PICKUP_POSITION = -100;
             public static int CLIMB_UP_POSITION = -1109;
             public static int CLIMB_DOWN_POSITION = -100;
         }

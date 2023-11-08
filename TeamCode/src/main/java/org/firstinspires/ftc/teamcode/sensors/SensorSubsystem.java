@@ -30,7 +30,7 @@ public class SensorSubsystem {
 
     public int getFrontColor() {
         if (colorFront.blue()>colorFront.red()) {
-            return 1;
+            return 2;
         }
         if (colorFront.red()>colorFront.blue()) {
             return 2;
@@ -38,12 +38,12 @@ public class SensorSubsystem {
         if (colorFront.green()>colorFront.blue() && colorFront.green()>colorFront.red()) {
             return 3;
         }
-        return 0;
+        return 3;
     }
 
     public int getRearColor() {
         if (colorRear.blue()>colorRear.red()) {
-            return 1;
+            return 2;
         }
         if (colorRear.red()>colorRear.blue()) {
             return 2;
@@ -51,7 +51,7 @@ public class SensorSubsystem {
         if (colorRear.green()>colorRear.blue() && colorRear.green()>colorRear.red()) {
             return 3;
         }
-        return 0;
+        return 3;
     }
 
     public int getFrontBlue() {

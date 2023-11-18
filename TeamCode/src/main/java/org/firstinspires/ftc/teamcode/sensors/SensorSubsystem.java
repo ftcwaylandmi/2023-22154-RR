@@ -29,31 +29,32 @@ public class SensorSubsystem {
     }
 
     public int getFrontColor() {
-        if (colorFront.blue()>colorFront.red()) {
-            return 2;
-        }
-        if (colorFront.red()>colorFront.blue()) {
-            return 2;
-        }
-        if (colorFront.green()>colorFront.blue() && colorFront.green()>colorFront.red()) {
+//        if (colorFront.blue()>colorFront.red()) {
+//            return 2;
+//        }
+//        if (colorFront.red()>colorFront.blue()) {
+//            return 2;
+//        }
+        if (colorFront.green()*2>colorFront.blue() && colorFront.green()>colorFront.red()) {
             return 3;
+        } else {
+            return 2;
         }
-        return 3;
     }
 
     public int getRearColor() {
-        if (colorRear.blue()>colorRear.red()) {
-            return 2;
-        }
-        if (colorRear.red()>colorRear.blue()) {
-            return 2;
-        }
-        if (colorRear.green()>colorRear.blue() && colorRear.green()>colorRear.red()) {
+//        if (colorFront.blue()>colorFront.red()) {
+//            return 2;
+//        }
+//        if (colorFront.red()>colorFront.blue()) {
+//            return 2;
+//        }
+        if (colorFront.green()*2>colorFront.blue() && colorFront.green()>colorFront.red()) {
             return 3;
+        } else {
+            return 2;
         }
-        return 3;
     }
-
     public int getFrontBlue() {
         return colorFront.blue();
     }

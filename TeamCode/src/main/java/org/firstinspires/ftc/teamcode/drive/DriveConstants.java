@@ -16,9 +16,6 @@ import com.qualcomm.robotcore.hardware.PIDFCoefficients;
  * and op modes themselves.
  */
 
-// Jack and Aaron are testing GitHub integration...
-
-
 @Config
 public class DriveConstants {
 
